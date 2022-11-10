@@ -30,11 +30,11 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 //Route::get('/home', [AsetKodeController::class, 'index']);
 
 Route::apiResource('afdeling', AfdellingController::class);
-Route::apiResource('aset_kode', AsetKodeController::class);
-Route::apiResource('aset_jenis', AsetJenisController::class);
-Route::apiResource('data_aset', AsetController::class);
-Route::apiResource('hak_akses', HakAksesController::class);
-Route::apiResource('status_posisi', StatusPosisiController::class);
-Route::apiResource('sub_unit', SubUnitController::class);
+Route::apiResource('aset-kode', AsetKodeController::class);
+Route::apiResource('aset-jenis', AsetJenisController::class);
+Route::apiResource('data-aset', AsetController::class);
+Route::apiResource('hak-akses', HakAksesController::class);
+Route::apiResource('status-posisi', StatusPosisiController::class);
+Route::apiResource('sub-unit', SubUnitController::class);
 Route::apiResource('unit', UnitController::class);
 Route::apiResource('users', UserController::class);
