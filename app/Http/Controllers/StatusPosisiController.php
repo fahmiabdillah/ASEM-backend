@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Http\Models\StatusPosisi;
 
 class StatusPosisiController extends Controller
 {
@@ -13,7 +14,9 @@ class StatusPosisiController extends Controller
      */
     public function index()
     {
-        //
+        $statusPosisi = StatusPosisi::all();
+
+        return $statusPosisi;
     }
 
     /**
@@ -45,7 +48,9 @@ class StatusPosisiController extends Controller
      */
     public function show($id)
     {
-        //
+        $statusPosisi = StatusPosisi::FindOrFail();
+
+        return $statusPosisi;
     }
 
     /**

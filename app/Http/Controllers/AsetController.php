@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Http\Models\Aset;
 
 class AsetController extends Controller
 {
@@ -13,7 +14,7 @@ class AsetController extends Controller
      */
     public function index()
     {
-        //
+        
     }
 
     /**

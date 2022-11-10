@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Http\Models\AsetJenis;
 
 class AsetJenisController extends Controller
 {
@@ -13,7 +14,9 @@ class AsetJenisController extends Controller
      */
     public function index()
     {
-        //
+        $asetJenis = AsetJenis::all();
+
+        return $asetJenis;
     }
 
     /**
@@ -45,7 +48,9 @@ class AsetJenisController extends Controller
      */
     public function show($id)
     {
-        //
+        $asetJenis = AsetJenis::FindOrFail();
+
+        return $asetJenis;
     }
 
     /**

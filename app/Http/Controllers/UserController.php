@@ -3,9 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Http\Models\Afdelling;
+use App\Http\Models\User;
 
-class AfdellingController extends Controller
+class UserController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,9 +14,9 @@ class AfdellingController extends Controller
      */
     public function index()
     {
-        $afdellings = Afdelling::all();
+        $user = User::all();
 
-        return $afdellings;
+        return $user;
     }
 
     /**
@@ -48,9 +48,9 @@ class AfdellingController extends Controller
      */
     public function show($id)
     {
-        $afdellings = Afdelling::FindOrFail();
+        $user = User::FindOrFail();
 
-        return $afdellings;
+        return $user;
     }
 
     /**

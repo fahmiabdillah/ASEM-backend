@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Http\Models\AsetKode;
 
 class AsetKodeController extends Controller
 {
@@ -13,7 +14,9 @@ class AsetKodeController extends Controller
      */
     public function index()
     {
-        //
+        $asetKode = AsetKode::all();
+
+        return $asetKode;
     }
 
     /**
@@ -45,7 +48,9 @@ class AsetKodeController extends Controller
      */
     public function show($id)
     {
-        //
+        $asetKode = asetKode::FindOrFail();
+
+        return $asetKode;
     }
 
     /**

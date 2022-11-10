@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Http\Models\SubUnit;
 
 class SubUnitController extends Controller
 {
@@ -13,7 +14,9 @@ class SubUnitController extends Controller
      */
     public function index()
     {
-        //
+        $subUnit = SubUnit::all();
+
+        return $subUnit;
     }
 
     /**
@@ -45,7 +48,9 @@ class SubUnitController extends Controller
      */
     public function show($id)
     {
-        //
+        $subUnit = SubUnit::FindOrFail();
+
+        return $subUnit;
     }
 
     /**
