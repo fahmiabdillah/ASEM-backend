@@ -8,4 +8,11 @@ use Illuminate\Database\Eloquent\Model;
 class HakAkses extends Model
 {
     use HasFactory;
+
+    protected $table = 'hak_akses';
+    protected $primaryKey = 'hak_akses_id';
+    protected $fillable = [
+        'hak_akses_desc',
+    ];
+    
 }
