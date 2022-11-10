@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Http\Models\HakAkses;
+use App\Models\HakAkses;
 
 class HakAksesController extends Controller
 {

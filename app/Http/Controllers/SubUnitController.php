@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Http\Models\SubUnit;
+use App\Models\SubUnit;
 
 class SubUnitController extends Controller
 {

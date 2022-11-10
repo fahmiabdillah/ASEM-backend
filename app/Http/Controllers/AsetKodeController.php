@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Http\Models\AsetKode;
+use App\Models\AsetKode;
 
 class AsetKodeController extends Controller
 {

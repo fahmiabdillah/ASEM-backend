@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Http\Models\AsetJenis;
+use App\Models\AsetJenis;
 
 class AsetJenisController extends Controller
 {
