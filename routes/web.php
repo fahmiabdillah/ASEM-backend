@@ -1,7 +1,6 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\AsetKodeController;
 
 
 /*
@@ -18,5 +17,3 @@ use App\Http\Controllers\AsetKodeController;
 Route::get('/', function () {
     return view('welcome');
 });
-
-Route::get('/home', [AsetKodeController::class, 'index']);

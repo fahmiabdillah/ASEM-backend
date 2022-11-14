@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\AsetKondisi;
 use Illuminate\Http\Request;
-use App\Models\AsetKode;
 
-class AsetKodeController extends Controller
+class AsetKondisiController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,9 +14,9 @@ class AsetKodeController extends Controller
      */
     public function index()
     {
-        $asetKode = AsetKode::all();
-
-        return $asetKode;
+        $asetKondisi = AsetKondisi::all();
+        
+        return $asetKondisi;
     }
 
     /**
@@ -43,23 +43,23 @@ class AsetKodeController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  int  $id
+     * @param  \App\Models\AsetKondisi  $asetKondisi
      * @return \Illuminate\Http\Response
      */
     public function show($id)
     {
-        $asetKode = AsetKode::FindOrFail();
+        $asetKondisi = AsetKondisi::FindOrFail();
 
-        return $asetKode;
+        return $asetKondisi;
     }
 
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  int  $id
+     * @param  \App\Models\AsetKondisi  $asetKondisi
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(AsetKondisi $asetKondisi)
     {
         //
     }
@@ -68,10 +68,10 @@ class AsetKodeController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
+     * @param  \App\Models\AsetKondisi  $asetKondisi
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, AsetKondisi $asetKondisi)
     {
         //
     }
@@ -79,10 +79,10 @@ class AsetKodeController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  int  $id
+     * @param  \App\Models\AsetKondisi  $asetKondisi
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(AsetKondisi $asetKondisi)
     {
         //
     }
