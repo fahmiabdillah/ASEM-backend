@@ -2,8 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\AsetKode;
 use Illuminate\Http\Request;
-use App\Models\AsetKode;
 
 class AsetKodeController extends Controller
 {
@@ -16,17 +16,14 @@ class AsetKodeController extends Controller
     {
         $asetKode = AsetKode::all();
 
-        return $asetKode;
-    }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        //
+        $response = [
+            "status" => "success",
+            "code" => 200,
+            "data" => $asetKode
+        ];
+
+        return response()->json($response);
     }
 
     /**
@@ -48,20 +45,17 @@ class AsetKodeController extends Controller
      */
     public function show($id)
     {
-        $asetKode = AsetKode::FindOrFail();
+        $asetKode = AsetKode::find($id);
 
-        return $asetKode;
-    }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function edit($id)
-    {
-        //
+        $response = [
+            "status" => "success",
+            "code" => 200,
+            "data" => $asetKode
+        ];
+
+        return response()->json($response);
+
     }
 
     /**

@@ -2,8 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\StatusPosisi;
 use Illuminate\Http\Request;
-use App\Models\StatusPosisi;
 
 class StatusPosisiController extends Controller
 {
@@ -16,17 +16,14 @@ class StatusPosisiController extends Controller
     {
         $statusPosisi = StatusPosisi::all();
 
-        return $statusPosisi;
-    }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        //
+        $response = [
+            "status" => "success",
+            "code" => 200,
+            "data" => $statusPosisi
+        ];
+
+        return response()->json($response);
     }
 
     /**
@@ -48,20 +45,16 @@ class StatusPosisiController extends Controller
      */
     public function show($id)
     {
-        $statusPosisi = StatusPosisi::FindOrFail();
+        $statusPosisi = StatusPosisi::FindOrFail($id);
 
-        return $statusPosisi;
-    }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function edit($id)
-    {
-        //
+        $response = [
+            "status" => "success",
+            "code" => 200,
+            "data" => $statusPosisi
+        ];
+
+        return response()->json($statusPosisi);
     }
 
     /**

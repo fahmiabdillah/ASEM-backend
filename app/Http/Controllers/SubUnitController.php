@@ -2,8 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\SubUnit;
 use Illuminate\Http\Request;
-use App\Models\SubUnit;
 
 class SubUnitController extends Controller
 {
@@ -16,17 +16,14 @@ class SubUnitController extends Controller
     {
         $subUnit = SubUnit::all();
 
-        return $subUnit;
-    }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        //
+        $response = [
+            "status" => "success",
+            "code" => 200,
+            "data" => $subUnit
+        ];
+
+        return response()->json($response);
     }
 
     /**
@@ -48,20 +45,16 @@ class SubUnitController extends Controller
      */
     public function show($id)
     {
-        $subUnit = SubUnit::FindOrFail();
+        $subUnit = SubUnit::FindOrFail($id);
 
-        return $subUnit;
-    }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function edit($id)
-    {
-        //
+        $response = [
+            "status" => "success",
+            "code" => 200,
+            "data" => $subUnit
+        ];
+
+        return response()->json($response);
     }
 
     /**

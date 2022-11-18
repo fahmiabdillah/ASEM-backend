@@ -2,8 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Afdelling;
 use Illuminate\Http\Request;
-use App\Models\Afdelling;
 
 class AfdellingController extends Controller
 {
@@ -14,19 +14,17 @@ class AfdellingController extends Controller
      */
     public function index()
     {
-        $afdellings = Afdelling::all();
+        $afdelling = Afdelling::all();
 
-        return $afdellings;
-    }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        //
+        $response = [
+            "status" => "success",
+            "code" => 200,
+            "data" => $afdelling
+        ];
+
+        return response()->json($response);
+        
     }
 
     /**
@@ -48,20 +46,16 @@ class AfdellingController extends Controller
      */
     public function show($id)
     {
-        $afdellings = Afdelling::FindOrFail();
+        $afdelling = Afdelling::FindOrFail($id);
 
-        return $afdellings;
-    }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function edit($id)
-    {
-        //
+        $response = [
+            "status" => "success",
+            "code" => 200,
+            "data" => $afdelling
+        ];
+
+        return response()->json($response);
     }
 
     /**

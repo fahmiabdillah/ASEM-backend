@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\AsetTipe;
+use App\AsetTipe;
 use Illuminate\Http\Request;
 
 class AsetTipeController extends Controller
@@ -20,16 +20,6 @@ class AsetTipeController extends Controller
     }
 
     /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        //
-    }
-
-    /**
      * Store a newly created resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
@@ -43,35 +33,24 @@ class AsetTipeController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\AsetTipe  $asetTipe
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
     public function show($id)
     {
-        $asetTipe = AsetTipe::FindOrFail();
+        $asetTipe = AsetTipe::FindOrFail($id);
 
         return $asetTipe;
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  \App\Models\AsetTipe  $asetTipe
-     * @return \Illuminate\Http\Response
-     */
-    public function edit(AsetTipe $asetTipe)
-    {
-        //
     }
 
     /**
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\AsetTipe  $asetTipe
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, AsetTipe $asetTipe)
+    public function update(Request $request, $id)
     {
         //
     }
@@ -79,10 +58,10 @@ class AsetTipeController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\AsetTipe  $asetTipe
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy(AsetTipe $asetTipe)
+    public function destroy($id)
     {
         //
     }

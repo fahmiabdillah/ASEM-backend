@@ -3,7 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\Unit;
+
+use App\Unit;
 
 class UnitController extends Controller
 {
@@ -16,17 +17,14 @@ class UnitController extends Controller
     {
         $unit = Unit::all();
 
-        return $unit;
-    }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        //
+        $response = [
+            "status" => "success",
+            "code" => 200,
+            "data" => $unit
+        ];
+
+        return response()->json($response);
     }
 
     /**
@@ -48,20 +46,16 @@ class UnitController extends Controller
      */
     public function show($id)
     {
-        $unit = Unit::FindOrFail();
+        $unit = Unit::FindOFail($id);
 
-        return $unit;
-    }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function edit($id)
-    {
-        //
+        $response = [
+            "status" => "success",
+            "code" => 200,
+            "data" => $unit
+        ];
+
+        return response()->json($response);
     }
 
     /**

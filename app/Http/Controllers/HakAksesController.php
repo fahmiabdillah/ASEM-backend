@@ -2,8 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\HakAkses;
 use Illuminate\Http\Request;
-use App\Models\HakAkses;
 
 class HakAksesController extends Controller
 {
@@ -14,19 +14,16 @@ class HakAksesController extends Controller
      */
     public function index()
     {
-        $hakAkses = HakAkses::all();
+        $hakAkses =HakAkses::all();
 
-        return $hakAkses;
-    }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        //
+        $response = [
+            "status" => "success",
+            "code" => 200,
+            "data" => $hakAkses
+        ];
+
+        return response()->json($response);
     }
 
     /**
@@ -48,20 +45,16 @@ class HakAksesController extends Controller
      */
     public function show($id)
     {
-        $hakAkses = HakAkses::FindOrFail();
+        $hakAkses = HakAkses::FindOrFail($id);
 
-        return $hakAkses;
-    }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function edit($id)
-    {
-        //
+        $response = [
+            "status" => "success",
+            "code" => 200,
+            "data" => $hakAkses
+        ];
+
+        return response()->json($response);
     }
 
     /**

@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\AsetKondisi;
+use App\AsetKondisi;
 use Illuminate\Http\Request;
 
 class AsetKondisiController extends Controller
@@ -15,18 +15,8 @@ class AsetKondisiController extends Controller
     public function index()
     {
         $asetKondisi = AsetKondisi::all();
-        
-        return $asetKondisi;
-    }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        //
+        return $asetKondisi;
     }
 
     /**
@@ -43,35 +33,24 @@ class AsetKondisiController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\AsetKondisi  $asetKondisi
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
     public function show($id)
     {
-        $asetKondisi = AsetKondisi::FindOrFail();
+        $asetKondisi = AsetKondisi::FindOrfail($id);
 
         return $asetKondisi;
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  \App\Models\AsetKondisi  $asetKondisi
-     * @return \Illuminate\Http\Response
-     */
-    public function edit(AsetKondisi $asetKondisi)
-    {
-        //
     }
 
     /**
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\AsetKondisi  $asetKondisi
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, AsetKondisi $asetKondisi)
+    public function update(Request $request, $id)
     {
         //
     }
@@ -79,10 +58,10 @@ class AsetKondisiController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\AsetKondisi  $asetKondisi
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy(AsetKondisi $asetKondisi)
+    public function destroy($id)
     {
         //
     }

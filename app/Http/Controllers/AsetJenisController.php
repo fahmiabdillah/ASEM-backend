@@ -2,8 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\AsetJenis;
 use Illuminate\Http\Request;
-use App\Models\AsetJenis;
 
 class AsetJenisController extends Controller
 {
@@ -16,17 +16,14 @@ class AsetJenisController extends Controller
     {
         $asetJenis = AsetJenis::all();
 
-        return $asetJenis;
-    }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        //
+        $response = [
+            "status" => "success",
+            "code" => 200,
+            "data" => $asetJenis
+        ];
+
+        return response()->json($response);
     }
 
     /**
@@ -37,7 +34,7 @@ class AsetJenisController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        
     }
 
     /**
@@ -48,20 +45,16 @@ class AsetJenisController extends Controller
      */
     public function show($id)
     {
-        $asetJenis = AsetJenis::FindOrFail();
+        $asetJenis = AsetJenis::FindOrFail($id);
 
-        return $asetJenis;
-    }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function edit($id)
-    {
-        //
+        $response = [
+            "status" => "success",
+            "code" => 200,
+            "data" => $asetJenis
+        ];
+
+        return response()->json($response);
     }
 
     /**
