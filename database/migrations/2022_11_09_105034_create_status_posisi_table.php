@@ -16,6 +16,7 @@ class CreateStatusPosisiTable extends Migration
         Schema::create('status_posisi', function (Blueprint $table) {
             $table->integer('sp_id', true);
             $table->string('sp_desc', 100)->nullable();
+            $table->string('ket_reject', 100)->nullable();
             $table->timestamp('created_at')->useCurrent();
             $table->dateTime('updated_at')->nullable()->useCurrent();
         });

@@ -50,3 +50,5 @@ Route::get('aset/{id}', [AsetController::class, 'show']);
 Route::get('aset/', [AsetController::class, 'index']);
 Route::get('aset/kirim-data', [AsetController::class, 'kirimDataAset']);
 
+
+

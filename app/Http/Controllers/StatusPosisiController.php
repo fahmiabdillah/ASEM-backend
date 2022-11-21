@@ -79,4 +79,33 @@ class StatusPosisiController extends Controller
     {
         //
     }
+
+    //fungsi reject data
+    //ketika di posisi manapun dan direject, akan kembali ke posisi operator
+    public function reject(Request $request){
+
+        $reject = Aset::FindOrFail($id);
+        if ($statusPosisi != 1 ) {
+            # code...
+            $reject -> ket_reject = $request->revisi;
+            $reject -> save();
+            //ket_reject belum dibuat atribut nya di db
+        } else {
+            # code...
+            return ;
+        }
+        
+        /**public function kasi_reject(Request $request) {
+        $data = $request->tma_ids;
+        foreach( $data as $val) {
+            $reject = DataTMATebu::find($val);
+            $reject->posisi_id = 10;
+            $reject->ket_revisi = $request->revisi;
+            $reject->status_reject = 1;
+            $reject->save();
+        }
+        return response()->json(['success' => true], 200);
+    } */
+        
+    }
 }

@@ -194,7 +194,7 @@ class AsetController extends Controller
             $aset->status_posisi += 1;
             $aset->update();
         }
-
+        
         return $aset;
     }
 }
