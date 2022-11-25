@@ -84,7 +84,7 @@ class StatusPosisiController extends Controller
     //ketika di posisi manapun dan direject, akan kembali ke posisi operator
     public function reject(Request $request){
 
-        $reject = Aset::FindOrFail($id);
+        $reject = Aset::findOrFail($id);
         if ($statusPosisi != 1 ) {
             # code...
             $reject -> ket_reject = $request->revisi;
@@ -92,6 +92,7 @@ class StatusPosisiController extends Controller
             //ket_reject belum dibuat atribut nya di db
         } else {
             # code...
+
             return ;
         }
         

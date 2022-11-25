@@ -196,5 +196,15 @@ class AsetController extends Controller
         }
         
         return $aset;
+    
+    }
+    
+    public function filterAset($from, $to, $district = NULL){
+        
+        $cases = Aset::whereDate('created_at', '>=', '$to');
+        if($district){
+            $cases = $cases-> where('district',$district);
+        }
+        return Aset;
     }
 }
