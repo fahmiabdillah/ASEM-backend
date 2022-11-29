@@ -106,7 +106,7 @@ class StatusPosisiController extends Controller
             $reject->save();
         }
         return response()->json(['success' => true], 200);
-    } */
-        
+        }*/   
+                
     }
 }
